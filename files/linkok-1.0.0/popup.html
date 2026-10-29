@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkOK</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>LinkOK</h1>
+    <button id="rescan" type="button">Verificar agora</button>
+  </header>
+
+  <section id="verdict" aria-live="polite">
+    <p id="verdict-title">Carregando…</p>
+    <p id="verdict-detail"></p>
+  </section>
+
+  <section id="tally" hidden>
+    <span class="tally danger"><b id="n-danger">0</b> perigosos</span>
+    <span class="tally warn"><b id="n-warn">0</b> suspeitos</span>
+    <span class="tally ok"><b id="n-ok">0</b> sem alertas</span>
+  </section>
+
+  <ul id="flagged"></ul>
+
+  <p id="sb-status"></p>
+
+  <details id="settings">
+    <summary>Configurações</summary>
+
+    <label class="toggle"><input type="checkbox" id="opt-auto"> Verificar links automaticamente ao abrir a página</label>
+    <label class="toggle"><input type="checkbox" id="opt-block"> Pedir confirmação antes de abrir links perigosos</label>
+    <label class="toggle"><input type="checkbox" id="opt-safe"> Marcar também os links sem alertas</label>
+
+    <div class="key">
+      <label for="api-key">Chave da API Google Safe Browsing</label>
+      <div class="key-row">
+        <input type="password" id="api-key" autocomplete="off" spellcheck="false" placeholder="Cole sua chave aqui">
+        <button id="save-key" type="button">Salvar chave</button>
+      </div>
+      <p class="hint" id="key-msg"></p>
+      <p class="hint">
+        Sem a chave, a extensão usa só a análise local do endereço e nada sai do seu navegador. Ao salvar uma chave,
+        os endereços dos links de cada página que você abrir passam a ser enviados ao Google Safe Browsing para checagem
+        em listas de phishing e malware.
+        <a href="https://developers.google.com/safe-browsing/v4/get-started" target="_blank" rel="noopener noreferrer">Como obter a chave</a>
+      </p>
+    </div>
+  </details>
+
+  <script src="popup.js"></script>
+</body>
+</html>

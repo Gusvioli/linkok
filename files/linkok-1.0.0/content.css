@@ -1,0 +1,18 @@
+a[data-linkok="danger"] {
+  outline: 2px solid #c62828 !important;
+  outline-offset: 1px !important;
+  background-color: rgba(198, 40, 40, 0.14) !important;
+  border-radius: 2px;
+}
+
+a[data-linkok="warn"] {
+  outline: 2px dashed #b7791f !important;
+  outline-offset: 1px !important;
+  background-color: rgba(183, 121, 31, 0.14) !important;
+  border-radius: 2px;
+}
+
+a[data-linkok="ok"] {
+  outline: 1px dotted #1b7f5a !important;
+  outline-offset: 1px !important;
+}
